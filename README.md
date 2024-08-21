@@ -21,4 +21,5 @@ This Weather App provides real-time weather updates, including the current time,
 - [OpenWeather API](https://openweathermap.org/api) for real-time weather data
 
 
-## [🔗 Live ](https://rad-platypus-eeb4c1.netlify.app/)
+## 🔗 Live 
+-- [**Netlify**](https://rad-platypus-eeb4c1.netlify.app/)

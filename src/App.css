@@ -3,18 +3,27 @@
   padding: 0;
   box-sizing: border-box;
 }
+
 :root {
   --sky: #8eebff;
   --btn_icon: #ffd233;
 }
+
+html, body {
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden; /* Prevent horizontal scrolling */
+}
+
 body {
   background: linear-gradient(180deg, rgb(13 0 49) 0%, rgb(64 5 234) 100%);
   color: #fff;
   font-family: "Roboto", sans-serif;
   font-weight: 400;
   font-style: normal;
-  display: grid;
-  place-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   height: 100vh;
   font-size: 18px;
 }
@@ -26,12 +35,14 @@ body {
   display: flex;
   justify-content: space-around;
   flex-direction: column;
-  width: 475px;
+  width: 100%;
+  max-width: 475px;
   height: 90vh;
   background: linear-gradient(0deg, rgb(29 0 114) 0%, rgb(58 0 226) 100%);
+  margin: 0 10px; /* Small margin to prevent edge overflow */
 }
 
-/* searbar */
+/* search bar */
 .search_bar {
   display: flex;
   justify-content: space-between;
@@ -41,7 +52,8 @@ body {
 }
 
 .search_feild {
-  width: 350px;
+  width: 100%;
+  max-width: 350px;
   height: 55px;
   border-radius: 10px;
   outline: none;
@@ -68,6 +80,7 @@ body {
   background-color: #c89c00;
   transition: 0.2s;
 }
+
 i {
   color: orange;
   margin-right: 5px;
@@ -75,17 +88,18 @@ i {
 }
 
 /* weather data */
-
 .weather_data {
   display: flex;
   justify-content: space-between;
   margin: 50px 10px;
+  flex-wrap: wrap; /* Wrap items to fit on smaller screens */
 }
 
 .weather_status_icon .icon {
   max-width: 220px;
   max-height: 180px;
 }
+
 .location {
   letter-spacing: 2px;
   font-weight: 500;
@@ -121,6 +135,7 @@ h1 {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  flex-wrap: wrap; /* Wrap items to prevent overflow */
 }
 .air_day_vibe i {
   color: var(--sky);
@@ -146,21 +161,5 @@ h1 {
 }
 
 @media only screen and (max-width: 600px) {
-  .container {
-    border: 1px solid #fff;
-    padding: 20px;
-    border-radius: 30px;
-    display: flex;
-    justify-content: space-around;
-    flex-direction: column;
-    width: 95%;
-    height: 90vh;
-    background: rgb(31, 15, 77);
-    background: linear-gradient(
-      0deg,
-      rgba(31, 15, 77, 1) 0%,
-      rgba(47, 14, 142, 1) 100%
-    );
-    margin: auto;
-  }
+  
 }

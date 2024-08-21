@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react";
 import Weather_icon from "../assets/image/sun.png";
 import moment from "moment";
-
+import axios from "axios";
+const api_keys = import.meta.env.VITE_api_keys
 const Weather = () => {
   
   
@@ -17,8 +18,21 @@ const timer = ()=>{
   
 
   }
+  const fetch_data = async ()=>{
+    const url = `https://api.openweathermap.org/data/2.5/weather?lat=23.8041&lon=90.4152&appid=${api_keys}`
+   
+   try {
+    const request_data = await axios.get(url)
+    const result =request_data.data
+    console.log(result)
+    
+   } catch (error) {
+    console.log(error)
+   }
+  }
   useEffect(()=>{
     let timerId = timer()
+    fetch_data()
     return ()=>{
       clearInterval(timerId)
     }

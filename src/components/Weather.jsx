@@ -1,7 +1,31 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Weather_icon from "../assets/image/sun.png";
+import moment from "moment";
 
 const Weather = () => {
+  
+  
+const [time,setTime] = useState(moment().format("hh:mm:ss a"))
+const date =moment().format("MMM Do YY")
+
+const timer = ()=>{
+ return  setInterval(() => {
+    const time = moment().format("hh:mm:ss a");
+    setTime(time)
+    
+    },1000)
+  
+
+  }
+  useEffect(()=>{
+    let timerId = timer()
+    return ()=>{
+      clearInterval(timerId)
+    }
+    
+  },[])
+ 
+
   return (
     <div className="container">
       <div className="search_bar">
@@ -19,17 +43,17 @@ const Weather = () => {
           <img className="icon" src={Weather_icon} alt="" />
           <div className="date_time">
             <span>
-              <i class="fa-solid fa-calendar-days"></i>
-              20 Aug 2024
+              <i className="fa-solid fa-calendar-days"></i>
+              {date}
             </span>
             <span>
-              <i class="fa-solid fa-clock"></i> 12:10PM
+              <i className="fa-solid fa-clock"></i> {time}
             </span>
           </div>
         </div>
         <div className="temperature_status">
           <span className="location">
-            <i class="fa-solid fa-location-dot"></i>
+            <i className="fa-solid fa-location-dot"></i>
             Tangail,Dhaka
           </span>
           <div className="temp">
@@ -43,7 +67,7 @@ const Weather = () => {
         <div className="wine_staus">
           <div>
             <span className="wind_speeds">
-              <i class="fa-solid fa-wind"></i>
+              <i className="fa-solid fa-wind"></i>
               23kmph
             </span>
           </div>
@@ -52,7 +76,7 @@ const Weather = () => {
         <div className="humandity">
           <div>
             <span className="humandity_rate">
-              <i class="fa-solid fa-temperature-three-quarters"></i>
+              <i className="fa-solid fa-temperature-three-quarters"></i>
               60%
             </span>
           </div>

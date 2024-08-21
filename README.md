@@ -1,6 +1,6 @@
 # Weather App
 
-This Weather App provides real-time weather updates, including the current time, date, wind speed, temperature, and weather status. The app is designed with a user-friendly interface that allows users to access all relevant weather information at a glance.
+This Weather App provides real-time weather updates, including the current time, date, wind speed, temperature, and weather status. The app is designed with a user-friendly interface that allows users to access all relevant weather information at a glance. The default location is determined by the user's current location, and users can also search by city name to explore weather conditions in different areas.
 
 ## Tools and Technologies
 

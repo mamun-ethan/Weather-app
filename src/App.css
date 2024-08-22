@@ -35,11 +35,12 @@ body {
   display: flex;
   justify-content: space-around;
   flex-direction: column;
-  width: 100%;
-  max-width: 475px;
+  
+  width: 600px;
   height: 90vh;
+  margin: auto;
   background: linear-gradient(0deg, rgb(29 0 114) 0%, rgb(58 0 226) 100%);
-  margin: 0 10px; /* Small margin to prevent edge overflow */
+
 }
 
 /* search bar */
@@ -92,7 +93,8 @@ i {
   display: flex;
   justify-content: space-between;
   margin: 50px 10px;
-  flex-wrap: wrap; /* Wrap items to fit on smaller screens */
+  align-items: center;
+  
 }
 
 .weather_status_icon .icon {
@@ -124,8 +126,9 @@ h1 {
   display: inline-block;
   text-align: center;
 }
-.date_time span {
-  font-size: 14px;
+.date_time span{
+  font-size: 18px;
+  font-weight: 600;
 }
 .date_time span i {
   font-size: 18px;
@@ -161,5 +164,31 @@ h1 {
 }
 
 @media only screen and (max-width: 600px) {
-  
+  .container{
+    width: 95vw;
+    overflow: hidden;
+  }
+  .weather_data h1{
+    font-size: 100px;
+  }
+  .day_status{
+    font-size: 20px;
+  }
+  .weather_status_icon .icon {
+   width: 150px;
+  }
+
+  .date_time{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    
+  }
+  .date_time span:nth-child(1){
+    margin-bottom: 10px;
+    
+  }
+  .location {
+    font-size: 14px;
+  }
 }

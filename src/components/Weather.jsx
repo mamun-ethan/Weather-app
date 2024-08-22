@@ -5,7 +5,8 @@ import axios from "axios";
 const api_keys = import.meta.env.VITE_api_keys
 const Weather = () => {
   
-  
+
+const [weather_data,set_weather] = useState()
 const [time,setTime] = useState(moment().format("hh:mm:ss a"))
 const date =moment().format("MMM Do YY")
 
@@ -19,12 +20,14 @@ const timer = ()=>{
 
   }
   const fetch_data = async ()=>{
-    const url = `https://api.openweathermap.org/data/2.5/weather?lat=23.8041&lon=90.4152&appid=${api_keys}`
+    const url = `https://api.openweathermap.org/data/2.5/weather?q=tangail&appid=${api_keys}&units=metric`
    
    try {
     const request_data = await axios.get(url)
     const result =request_data.data
-    console.log(result)
+   
+    set_weather(result)
+    
     
    } catch (error) {
     console.log(error)
@@ -71,7 +74,7 @@ const timer = ()=>{
             Tangail,Dhaka
           </span>
           <div className="temp">
-            <h1>23°</h1>
+            <h1>{weather_data ? Math.floor( weather_data.main.temp) : " "}°</h1>
 
             <span className="day_status"> cloudy</span>
           </div>

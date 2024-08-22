@@ -20,13 +20,14 @@ const timer = ()=>{
 
   }
   const fetch_data = async ()=>{
-    const url = `https://api.openweathermap.org/data/2.5/weather?q=tangail&appid=${api_keys}&units=metric`
+    const url = `https://api.openweathermap.org/data/2.5/weather?q=dhaka&appid=${api_keys}&units=metric`
    
    try {
     const request_data = await axios.get(url)
     const result =request_data.data
    
     set_weather(result)
+    console.log(result)
     
     
    } catch (error) {
@@ -71,33 +72,37 @@ const timer = ()=>{
         <div className="temperature_status">
           <span className="location">
             <i className="fa-solid fa-location-dot"></i>
-            Tangail,Dhaka
+            {weather_data ? weather_data.name : " "} ,
+            {weather_data ? weather_data.sys.country : " "}
+            
+
+
           </span>
           <div className="temp">
             <h1>{weather_data ? Math.floor( weather_data.main.temp) : " "}°</h1>
 
-            <span className="day_status"> cloudy</span>
+            <span className="day_status"> {weather_data ? weather_data.weather[0].main : " "}</span>
           </div>
         </div>
       </div>
       <div className="air_day_vibe">
-        <div className="wine_staus">
+        <div className="wine_status">
           <div>
             <span className="wind_speeds">
               <i className="fa-solid fa-wind"></i>
-              23kmph
+              {weather_data ? weather_data.wind.speed : " "}kmph
             </span>
           </div>
-          <span className="wind_speed">wine speed</span>
+          <span className="wind_status">wine speed</span>
         </div>
         <div className="humandity">
           <div>
             <span className="humandity_rate">
               <i className="fa-solid fa-temperature-three-quarters"></i>
-              60%
+              {weather_data ? weather_data.main.humidity: " "}%
             </span>
           </div>
-          <span className="humandity_staus">Humanidty</span>
+          <span className="humandity_status">Humanidty</span>
         </div>
       </div>
     </div>

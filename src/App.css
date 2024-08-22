@@ -26,6 +26,7 @@ body {
   align-items: center;
   height: 100vh;
   font-size: 18px;
+  text-transform: capitalize;
 }
 
 .container {
@@ -143,21 +144,53 @@ h1 {
 .air_day_vibe i {
   color: var(--sky);
 }
-.wind_speeds,
+.wine_status{
+  justify-content: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.humandity{
+  justify-content: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 .humandity_rate {
   font-family: "Plus Jakarta Sans", sans-serif;
   letter-spacing: 2px;
-  font-size: 16px;
+  
   color: var(--sky);
+  font-size: 18px;
+  font-weight: 600;
 }
-.wind_speeds,
-.humandity_rate i {
-  font-size: 22px;
+.humandity_status{
+  font-weight: 500;
+
 }
-.wind_speed,
-.humandity_rate {
+.wind_speeds{
+  font-family: "Plus Jakarta Sans", sans-serif;
+  letter-spacing: 2px;
+  
+  color: var(--sky);
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.wind_speeds i {
   text-transform: capitalize;
-  font-size: 14px;
+  font-size: 28px;
+  letter-spacing: 2px;
+  font-weight: 600;
+  padding-left: 14px;
+}
+.wind_status{
+  font-weight: 500;
+}
+
+.humandity_rate i{
+  text-transform: capitalize;
+  font-size: 28px;
   letter-spacing: 2px;
   font-weight: 600;
   padding-left: 14px;

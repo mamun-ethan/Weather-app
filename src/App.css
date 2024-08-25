@@ -232,13 +232,13 @@ h1 {
     overflow: hidden;
   }
   .weather_data h1{
-    font-size: 80px;
+    font-size: 75px;
   }
   .day_status{
     font-size: 20px;
   }
   .weather_status_icon .icon {
-   width: 130px;
+   width: 120px;
   }
 
   .date_time{

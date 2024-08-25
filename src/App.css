@@ -97,7 +97,9 @@ i {
   align-items: center;
   
 }
-
+.temperature_status{
+  padding: 15px;
+}
 .weather_status_icon .icon {
   max-width: 220px;
   max-height: 180px;
@@ -202,7 +204,7 @@ h1 {
     overflow: hidden;
   }
   .weather_data h1{
-    font-size: 75px;
+    font-size: 100px;
   }
   .day_status{
     font-size: 20px;
@@ -226,3 +228,13 @@ h1 {
   }
 }
 
+@media only screen and (max-width: 380px) {
+  .container{
+    width: 98%;
+  }
+.weather_data{
+  margin: 0;
+}
+
+
+}

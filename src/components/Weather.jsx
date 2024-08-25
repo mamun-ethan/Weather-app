@@ -7,8 +7,10 @@ const Weather = () => {
   
 
 const [weather_data,set_weather] = useState()
+const [change_value,set_Change] = useState(" ")
 const [time,setTime] = useState(moment().format("hh:mm:ss a"))
 const date =moment().format("MMM Do YY")
+
 
 const timer = ()=>{
  return  setInterval(() => {
@@ -42,6 +44,35 @@ const timer = ()=>{
     }
     
   },[])
+  
+  const fetch_by_submit =  async(location)=>{
+    const url = `https://api.openweathermap.org/data/2.5/weather?q=${location}&appid=${api_keys}&units=metric`
+   
+   try {
+    const request_data = await axios.get(url)
+    const result =request_data.data
+   
+    set_weather(result)
+    console.log(result)
+    
+    
+   } catch (error) {
+    console.log(error)
+   }
+
+  }
+
+      const handle_change = (event)=>{
+        set_Change(event.target.value)
+      }
+      
+      const handle_submit = (event)=>{
+        event.preventDefault()
+         if(change_value === " "){
+          alert("Enter the City")
+         }
+         fetch_by_submit(change_value)
+      }
  
 
   return (
@@ -52,9 +83,10 @@ const timer = ()=>{
           className="search_feild"
           placeholder="Search by City"
           name=""
+          onChange={handle_change}
           id=""
         />
-        <button className="search_btn">Search</button>
+        <button className="search_btn" onClick={handle_submit}>Search</button>
       </div>
       <div className="weather_data">
         <div className="weather_status_icon">

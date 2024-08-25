@@ -37,7 +37,7 @@ body {
   justify-content: space-around;
   flex-direction: column;
   
-  width: 600px;
+  width: 550px;
   height: 90vh;
   margin: auto;
   background: linear-gradient(0deg, rgb(29 0 114) 0%, rgb(58 0 226) 100%);

@@ -21,12 +21,13 @@ This Weather App provides real-time weather updates, including the current time,
 - [Vite](https://vitejs.dev/) for building and development
 - [Vs code](https://code.visualstudio.com/) As a code editor
 - [Figma](https://www.figma.com/) 
-- [git][https://git-scm.com/] for version controling system
+- [git](https://git-scm.com/) for version controling system
 
 
 ## To get Figma design files 🎨
 - [ Figma design files ](https://www.figma.com/design/CqIyftfsFrxGRLgqlhxgtg/weather-app-ui?node-id=0-1&t=nWwfz9foh1Zx0IHM-1)
 
+<img src="./src/assets/ui/Desktop - 1.png" alt="Figma Files" width="500" height="300">
 
 
 ## 🔗 Live 🚀

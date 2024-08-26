@@ -8,7 +8,11 @@ const api_keys = import.meta.env.VITE_api_keys;
 const Weather = () => {
   const [weatherData, setWeatherData] = useState(null);
   const [changeValue, setChangeValue] = useState("");
-  const [location, setLocation] = useState({ latitude: 40.7128, longitude: -74.0060 }); // Default to New York City
+  //default city
+  const [location, setLocation] = useState({
+    latitude: 40.7128,
+    longitude: -74.006,
+  });
   const [time, setTime] = useState(moment().format("hh:mm:ss a"));
   const date = moment().format("MMM Do YY");
 
@@ -38,7 +42,9 @@ const Weather = () => {
           }
         );
       } else {
-        alert("Geolocation is not supported by this browser. Using default location.");
+        alert(
+          "Geolocation is not supported by this browser. Using default location."
+        );
       }
     };
 
@@ -64,7 +70,7 @@ const Weather = () => {
     }
   };
 
-  //  fetch weather data by city name
+  //  fetch weather data by enntering city name
   const fetchBySubmit = async () => {
     const url = `https://api.openweathermap.org/data/2.5/weather?q=${changeValue}&appid=${api_keys}&units=metric`;
     try {
@@ -100,7 +106,9 @@ const Weather = () => {
           placeholder="Search by City"
           onChange={handleChange}
         />
-        <button className="search_btn" onClick={handleSubmit}>Search</button>
+        <button className="search_btn" onClick={handleSubmit}>
+          Search
+        </button>
       </div>
       <div className="weather_data">
         <div className="weather_status_icon">
@@ -117,25 +125,30 @@ const Weather = () => {
         <div className="temperature_status">
           <span className="location">
             <i className="fa-solid fa-location-dot"></i>
-            {weatherData ? weatherData.name : "Unknown"} , {weatherData ? weatherData.sys.country : ""}
+            {weatherData ? weatherData.name : "Unknown"} ,{" "}
+            {weatherData ? weatherData.sys.country : ""}
           </span>
           <div className="temp">
             <h1>{weatherData ? Math.floor(weatherData.main.temp) : "--"}°</h1>
-            <span className="day_status">{weatherData ? weatherData.weather[0].main : ""}</span>
+            <span className="day_status">
+              {weatherData ? weatherData.weather[0].main : ""}
+            </span>
           </div>
         </div>
       </div>
       <div className="air_day_vibe">
         <div className="wind_status">
           <span className="wind_speeds">
-            <i className="fa-solid fa-wind"></i> {weatherData ? weatherData.wind.speed : "--"} km/h
+            <i className="fa-solid fa-wind"></i>{" "}
+            {weatherData ? weatherData.wind.speed : "--"} km/h
           </span>
           <br />
           <span className="wind_status_label">Wind Speed</span>
         </div>
         <div className="humidity">
           <span className="humidity_rate">
-            <i className="fa-solid fa-temperature-three-quarters"></i> {weatherData ? weatherData.main.humidity : "--"}%
+            <i className="fa-solid fa-temperature-three-quarters"></i>{" "}
+            {weatherData ? weatherData.main.humidity : "--"}%
           </span>
           <br />
           <span className="humidity_status_label">Humidity</span>
